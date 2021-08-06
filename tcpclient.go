@@ -87,10 +87,10 @@ func (mb *tcpPackager) Verify(aduRequest []byte, aduResponse []byte) (err error)
 	// Transaction id
 	responseVal := binary.BigEndian.Uint16(aduResponse)
 	requestVal := binary.BigEndian.Uint16(aduRequest)
-	if responseVal != requestVal {
-		err = fmt.Errorf("modbus: response transaction id '%v' does not match request '%v'", responseVal, requestVal)
-		return
-	}
+	//if responseVal != requestVal {
+	//	err = fmt.Errorf("modbus: response transaction id '%v' does not match request '%v'", responseVal, requestVal)
+	//	return
+	//}
 	// Protocol id
 	responseVal = binary.BigEndian.Uint16(aduResponse[2:])
 	requestVal = binary.BigEndian.Uint16(aduRequest[2:])
